@@ -15,6 +15,12 @@
 		6A91FA29251D26B100828A62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A91FA27251D26B100828A62 /* Main.storyboard */; };
 		6A91FA35251D26B100828A62 /* NicholsonTTSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A91FA34251D26B100828A62 /* NicholsonTTSTests.swift */; };
 		6A91FA40251D26B100828A62 /* NicholsonTTSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A91FA3F251D26B100828A62 /* NicholsonTTSUITests.swift */; };
+		6AB97516251D28A800BF3B7E /* Highlighter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB97510251D28A700BF3B7E /* Highlighter.swift */; };
+		6AB97517251D28A800BF3B7E /* TTSEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB97511251D28A700BF3B7E /* TTSEngine.swift */; };
+		6AB97518251D28A800BF3B7E /* TTSWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB97512251D28A700BF3B7E /* TTSWords.swift */; };
+		6AB97519251D28A800BF3B7E /* VoicesOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB97513251D28A700BF3B7E /* VoicesOptions.swift */; };
+		6AB9751A251D28A800BF3B7E /* Extra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB97514251D28A700BF3B7E /* Extra.swift */; };
+		6AB9751B251D28A800BF3B7E /* sectionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AB97515251D28A700BF3B7E /* sectionBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +56,12 @@
 		6A91FA3B251D26B100828A62 /* NicholsonTTSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NicholsonTTSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A91FA3F251D26B100828A62 /* NicholsonTTSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NicholsonTTSUITests.swift; sourceTree = "<group>"; };
 		6A91FA41251D26B100828A62 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6AB97510251D28A700BF3B7E /* Highlighter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Highlighter.swift; sourceTree = "<group>"; };
+		6AB97511251D28A700BF3B7E /* TTSEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTSEngine.swift; sourceTree = "<group>"; };
+		6AB97512251D28A700BF3B7E /* TTSWords.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TTSWords.swift; sourceTree = "<group>"; };
+		6AB97513251D28A700BF3B7E /* VoicesOptions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoicesOptions.swift; sourceTree = "<group>"; };
+		6AB97514251D28A700BF3B7E /* Extra.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extra.swift; sourceTree = "<group>"; };
+		6AB97515251D28A700BF3B7E /* sectionBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = sectionBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +117,12 @@
 				6A91FA20251D26AD00828A62 /* Document.swift */,
 				6A91FA25251D26B100828A62 /* Assets.xcassets */,
 				6A91FA27251D26B100828A62 /* Main.storyboard */,
+				6AB97510251D28A700BF3B7E /* Highlighter.swift */,
+				6AB97515251D28A700BF3B7E /* sectionBuilder.swift */,
+				6AB97511251D28A700BF3B7E /* TTSEngine.swift */,
+				6AB97512251D28A700BF3B7E /* TTSWords.swift */,
+				6AB97513251D28A700BF3B7E /* VoicesOptions.swift */,
+				6AB97514251D28A700BF3B7E /* Extra.swift */,
 				6A91FA2A251D26B100828A62 /* Info.plist */,
 				6A91FA2B251D26B100828A62 /* NicholsonTTS.entitlements */,
 				6A91FA22251D26AD00828A62 /* Document.xcdatamodeld */,
@@ -260,10 +278,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6AB97516251D28A800BF3B7E /* Highlighter.swift in Sources */,
+				6AB97518251D28A800BF3B7E /* TTSWords.swift in Sources */,
 				6A91FA24251D26AD00828A62 /* Document.xcdatamodeld in Sources */,
+				6AB9751B251D28A800BF3B7E /* sectionBuilder.swift in Sources */,
+				6AB97519251D28A800BF3B7E /* VoicesOptions.swift in Sources */,
 				6A91FA1F251D26AD00828A62 /* ViewController.swift in Sources */,
+				6AB9751A251D28A800BF3B7E /* Extra.swift in Sources */,
 				6A91FA1D251D26AD00828A62 /* AppDelegate.swift in Sources */,
 				6A91FA21251D26AD00828A62 /* Document.swift in Sources */,
+				6AB97517251D28A800BF3B7E /* TTSEngine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

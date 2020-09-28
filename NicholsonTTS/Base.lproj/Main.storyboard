@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15705"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -673,7 +674,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="NicholsonTTS" customModuleProvider="target"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -703,25 +704,95 @@
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="5gI-5U-AMq" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="5gI-5U-AMq" customClass="ViewController" customModule="NicholsonTTS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="ERx-hH-rdd">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" preferredMaxLayoutWidth="246" translatesAutoresizingMaskIntoConstraints="NO" id="TyV-c9-G0C">
-                                <rect key="frame" x="115" y="124" width="250" height="22"/>
-                                <textFieldCell key="cell" sendsActionOnEndEditing="YES" alignment="center" title="Your document contents here" id="Cc7-nU-5Mv">
-                                    <font key="font" metaFont="system" size="18"/>
-                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                </textFieldCell>
-                            </textField>
+                            <scrollView appearanceType="aqua" fixedFrame="YES" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QOZ-Sx-um3">
+                                <rect key="frame" x="0.0" y="37" width="480" height="233"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <clipView key="contentView" ambiguous="YES" drawsBackground="NO" copiesOnScroll="NO" id="hRx-aX-HTA">
+                                    <rect key="frame" x="0.0" y="0.0" width="480" height="233"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView ambiguous="YES" verticallyResizable="YES" usesFontPanel="YES" usesInspectorBar="YES" findStyle="bar" allowsDocumentBackgroundColorChange="YES" usesRuler="YES" spellingCorrection="YES" smartInsertDelete="YES" id="Ljc-iu-wZX">
+                                            <rect key="frame" x="0.0" y="0.0" width="480" height="233"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <size key="minSize" width="480" height="233"/>
+                                            <size key="maxSize" width="480" height="10000000"/>
+                                            <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <connections>
+                                                <binding destination="5gI-5U-AMq" name="attributedString" keyPath="self.representedObject" id="z5c-mW-jpz"/>
+                                            </connections>
+                                        </textView>
+                                    </subviews>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="gUf-ZX-625">
+                                    <rect key="frame" x="-100" y="-100" width="240" height="16"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="w6v-vU-ebL">
+                                    <rect key="frame" x="464" y="0.0" width="16" height="233"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                            <box fixedFrame="YES" title="Voice Options" translatesAutoresizingMaskIntoConstraints="NO" id="bcc-xU-3vA">
+                                <rect key="frame" x="273" y="-4" width="210" height="39"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" id="TJj-Vl-lPf">
+                                    <rect key="frame" x="3" y="3" width="204" height="21"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <comboBox verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lGq-tO-gFe">
+                                            <rect key="frame" x="0.0" y="-4" width="99" height="25"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <comboBoxCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" completes="NO" numberOfVisibleItems="5" id="ylV-ON-L2M">
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                <objectValues>
+                                                    <string>Item 1</string>
+                                                    <string>Item 2</string>
+                                                    <string>Item 3</string>
+                                                </objectValues>
+                                            </comboBoxCell>
+                                            <connections>
+                                                <action selector="voiceComboAction:" target="5gI-5U-AMq" id="vVx-A6-mf7"/>
+                                            </connections>
+                                        </comboBox>
+                                        <slider verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i28-BX-j3O">
+                                            <rect key="frame" x="102" y="0.0" width="104" height="19"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                            <sliderCell key="cell" state="on" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="above" sliderType="linear" id="jXi-gC-8Mb"/>
+                                            <connections>
+                                                <action selector="rateSlideChange:" target="5gI-5U-AMq" id="v0v-ra-Uex"/>
+                                            </connections>
+                                        </slider>
+                                    </subviews>
+                                </view>
+                            </box>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Xs-sQ-AP1">
+                                <rect key="frame" x="-1" y="0.0" width="94" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <buttonCell key="cell" type="push" title="Read" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="lQU-GP-cbg">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="ReadButton:" target="5gI-5U-AMq" id="riM-bB-7qd"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <constraints>
-                            <constraint firstAttribute="centerY" secondItem="TyV-c9-G0C" secondAttribute="centerY" id="Rxv-Yd-F43"/>
-                            <constraint firstAttribute="centerX" secondItem="TyV-c9-G0C" secondAttribute="centerX" id="Zn4-Y4-lbg"/>
-                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="RButton" destination="8Xs-sQ-AP1" id="NiJ-c8-Q3h"/>
+                        <outlet property="TextViewer" destination="Ljc-iu-wZX" id="J9L-dY-17X"/>
+                        <outlet property="rateSlider" destination="i28-BX-j3O" id="VdB-4p-Gn3"/>
+                        <outlet property="voiceCombo" destination="lGq-tO-gFe" id="PSc-6b-mRR"/>
+                    </connections>
                 </viewController>
                 <customObject id="2Tp-Fl-jBw" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
