@@ -24,7 +24,7 @@ class Document: NSDocument {
         //NotificationCenter.default.addObserver(self, selector: #selector(windowDidMiniaturize(aNotification:)), name: NSWindow.didMiniaturizeNotification, object: nil)
         
         
-        self.hasUndoManager = true
+        //self.hasUndoManager = true
     }
 
     override class var autosavesInPlace: Bool {
