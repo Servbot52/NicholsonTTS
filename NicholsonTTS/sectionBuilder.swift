@@ -9,10 +9,13 @@
 import Foundation
 
 struct sectionBuilder{
-    static let endStringChar = [".", "!","?","\n","\u{2026}"]
+    static let endStringChar = [".", "!","?","\n", "\t", "\u{2026}"]
     static let afterEndChar = endStringChar + ["\"",")","]","}","\u{2047}"]
     
     static let startChar = [" ", "\n", "\t"]
+    
+    static let otherChar = [" ", "{", "[", "(", "\u{2018}"]
+    static let wordDividers = otherChar + afterEndChar
     
     static func startPoint(theString: String, loc: Int, stopLoc: Int) -> Int
     {
@@ -75,3 +78,22 @@ struct sectionBuilder{
     }
     
 }
+/*
+class wordList{
+    var replacements: [String: String]
+    
+    
+}
+
+class wordReplace{
+    let originalSentance: String!
+    var replacementSentance: String
+    
+    init(originalSentance: String){
+        self.originalSentance = originalSentance
+        replacementSentance = ""
+    }
+    
+    
+}
+*/

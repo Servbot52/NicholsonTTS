@@ -25,6 +25,7 @@ class Document: NSDocument {
         
         
         //self.hasUndoManager = true
+        
     }
 
     override class var autosavesInPlace: Bool {
@@ -56,6 +57,8 @@ class Document: NSDocument {
                 //contentViewController = contentVC
             }
         }
+        hasUndoManager = true
+        //undoManager?.prepare(withInvocationTarget: attrString)
     }
 
     

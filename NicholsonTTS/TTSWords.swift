@@ -104,9 +104,8 @@ class TTSWords{
     func readSectionStart(){
         let nsRange = NSMakeRange(sectionLocation, sectionLength)
         
-        if(isNSRangeVisible(theRange: nsRange) == false){
-            scrollToNSRange(theRange: nsRange)
-        }
+        
+        vC.TextViewer.scrollRangeToVisible(nsRange)
         
         hLighter.applyHighlightToRange(range: nsRange)
         
@@ -122,18 +121,6 @@ class TTSWords{
     func readSectionEnd(){
         hLighter.removeHighlightFromRange(range: lastRange)
         readSentance()
-    }
-    
-    // MARK: - Move To Range
-    func isNSRangeVisible(theRange: NSRange) -> Bool{
-        let visibleRange = vC.TextViewer.accessibilityVisibleCharacterRange()
-        let intersect = NSIntersectionRange(visibleRange, theRange)
-        return NSEqualRanges(theRange, intersect)
-    }
-    func scrollToNSRange(theRange: NSRange){
-        let yInt = theRange.lowerBound
-        let scrollPoint = NSPoint(x: 0, y: yInt)
-        vC.TextViewer.scroll(scrollPoint)
     }
 }
 

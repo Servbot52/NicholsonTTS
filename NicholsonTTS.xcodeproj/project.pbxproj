@@ -123,6 +123,7 @@
 				6AB97512251D28A700BF3B7E /* TTSWords.swift */,
 				6AB97513251D28A700BF3B7E /* VoicesOptions.swift */,
 				6AB97514251D28A700BF3B7E /* Extra.swift */,
+				6AB72AC12523C09F0088C321 /* New Group */,
 				6A91FA2A251D26B100828A62 /* Info.plist */,
 				6A91FA2B251D26B100828A62 /* NicholsonTTS.entitlements */,
 				6A91FA22251D26AD00828A62 /* Document.xcdatamodeld */,
@@ -146,6 +147,13 @@
 				6A91FA41251D26B100828A62 /* Info.plist */,
 			);
 			path = NicholsonTTSUITests;
+			sourceTree = "<group>";
+		};
+		6AB72AC12523C09F0088C321 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +218,9 @@
 		6A91FA11251D26AD00828A62 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					New,
+				);
 				LastSwiftUpdateCheck = 1130;
 				LastUpgradeCheck = 1130;
 				ORGANIZATIONNAME = "Kaj Nicholson";
