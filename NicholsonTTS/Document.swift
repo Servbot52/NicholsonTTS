@@ -20,23 +20,23 @@ class Document: NSDocument {
     
     override init() {
         super.init()
-        // Add your subclass-specific initialization here.
-        //NotificationCenter.default.addObserver(self, selector: #selector(windowDidMiniaturize(aNotification:)), name: NSWindow.didMiniaturizeNotification, object: nil)
-        
-        
-        //self.hasUndoManager = true
-        
+        // Add your subclass-specific initialization here.        
     }
 
     override class var autosavesInPlace: Bool {
         return true
     }
+    // This enables asynchronous-writing.
+    override func canAsynchronouslyWrite(to url: URL, ofType typeName: String, for saveOperation: NSDocument.SaveOperationType) -> Bool {
+        return true
+    }
+    
     override class func canConcurrentlyReadDocuments(ofType: String) -> Bool {
         //if(ofType == "public.plain-text"){ return true }
         if(ofType == "public.rtf"){ return true }
         return false
     }
-
+    
     override func makeWindowControllers() {
         // Returns the Storyboard that contains your Document window.
         /*
@@ -54,11 +54,16 @@ class Document: NSDocument {
             // Set the view controller's represented object as your document.
             if let contentVC = windowController.contentViewController as? ViewController {
                 contentVC.representedObject = attrString
-                //contentViewController = contentVC
+                contentViewController = contentVC
             }
         }
+        
+        /*
         hasUndoManager = true
-        //undoManager?.prepare(withInvocationTarget: attrString)
+        undoManager?.prepare(withInvocationTarget: attrString)
+        
+        undoManager?.enableUndoRegistration()
+        */
     }
 
     
@@ -97,7 +102,6 @@ class Document: NSDocument {
         if let textView = viewController?.TextViewer {
             attrString = textView.attributedString()
         }
-    }
-    
+    }    
     
 }

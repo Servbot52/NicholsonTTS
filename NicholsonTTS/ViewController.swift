@@ -19,6 +19,9 @@ class ViewController: NSViewController, NSTextViewDelegate {
         
         TextViewer.delegate = self
         TextViewer.isContinuousSpellCheckingEnabled = true
+        
+        //undoManager?.prepare(withInvocationTarget: self)
+        
     }
     
     var ttsEngine: TTSEngine!
@@ -60,6 +63,13 @@ class ViewController: NSViewController, NSTextViewDelegate {
         }
         ttsEngine.setVoice(voiceName: vName)
     }
+}
+
+extension ViewController{
+// MARK: - Base Parts
+    override func viewDidAppear() {
+        super.viewDidAppear()
+    }
     
     override var representedObject: Any? {
         didSet {
@@ -69,20 +79,12 @@ class ViewController: NSViewController, NSTextViewDelegate {
             }
         }
     }
-}
-
-extension ViewController{
-// MARK: - Base Parts
-
+    
     weak var document: Document? {
         if let docRepresentedObject = representedObject as? Document {
             return docRepresentedObject
         }
         return nil
-    }
-
-    override func viewDidAppear() {
-        super.viewDidAppear()
     }
 
     // MARK: - NSTextViewDelegate
